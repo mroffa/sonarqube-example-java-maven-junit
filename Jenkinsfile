@@ -1,10 +1,4 @@
 pipeline {
-  agent {
-    docker {
-      image 'alpine'
-    }
-
-  } 
   stages {
         stage('Build') {
             agent { docker 'maven:3-alpine' }
@@ -21,6 +15,4 @@ pipeline {
                 sh 'java -version'
             }
         }
-    }
-  }
 }
